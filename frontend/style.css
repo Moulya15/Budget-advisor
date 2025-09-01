@@ -1,0 +1,590 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header and Navigation */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h2 {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #667eea;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #667eea;
+}
+
+/* Authentication Styles */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.auth-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.auth-form {
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e1e5e9;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #333;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-toggle a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-toggle a:hover {
+    text-decoration: underline;
+}
+
+/* Budget Page Styles */
+.budget-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.budget-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.budget-card h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.form-section {
+    margin-bottom: 2.5rem;
+}
+
+.form-section h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.checkbox-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    border-color: rgba(102, 126, 234, 0.2);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 0.75rem;
+    transform: scale(1.2);
+    accent-color: #667eea;
+}
+
+.checkbox-item input[type="checkbox"]:checked + span,
+.checkbox-item:has(input[type="checkbox"]:checked) {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: #667eea;
+    font-weight: 500;
+}
+
+/* Loading Styles */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: white;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Budget Result Styles */
+#budget-result-content {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+    margin-bottom: 2rem;
+    white-space: pre-wrap;
+    line-height: 1.8;
+}
+
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Budget History Styles */
+.history-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+}
+
+.history-item h4 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.history-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.history-content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* About Page Styles */
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    color: white;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.about-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.section-icon {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.about-section h2 {
+    text-align: center;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.about-section p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    background: rgba(102, 126, 234, 0.05);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.how-it-works {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 15px;
+}
+
+.step h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.tech-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-category {
+    background: rgba(102, 126, 234, 0.05);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.tech-category h4 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.tech-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-category li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.tech-category li:last-child {
+    border-bottom: none;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.about-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #f5c6cb;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #c3e6cb;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .auth-card {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .budget-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .about-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+
+    .how-it-works {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-stack {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 1.5rem;
+    }
+
+    .budget-card {
+        padding: 1rem;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .budget-card h2 {
+        font-size: 1.5rem;
+    }
+}

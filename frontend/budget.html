@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Advisor - Create Budget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <h2>💰 Budget Advisor</h2>
+                </div>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/budget" class="active">Budget</a>
+                    <a href="/about">About</a>
+                    <a href="#" id="logout-link">Logout</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="budget-container">
+            <div class="welcome-section">
+                <h1>Welcome, <span id="username-display">User</span>! 👋</h1>
+                <p>Let's create your personalized budget plan</p>
+            </div>
+
+            <!-- Budget Input Form -->
+            <div class="budget-card" id="budget-form-card">
+                <h2>📊 Budget Information</h2>
+
+                <form id="budget-form">
+                    <!-- Salary Input -->
+                    <div class="form-section">
+                        <h3>💵 Monthly Income</h3>
+                        <div class="form-group">
+                            <label for="salary">Monthly Salary ($)</label>
+                            <input type="number" id="salary" name="salary" min="0" step="0.01" required placeholder="e.g., 5000">
+                        </div>
+                    </div>
+
+                    <!-- Spending Categories -->
+                    <div class="form-section">
+                        <h3>🛍️ Spending Categories</h3>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="housing"> Housing & Rent
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="food"> Food & Groceries
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="transportation"> Transportation
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="utilities"> Utilities
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="healthcare"> Healthcare
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="entertainment"> Entertainment
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="clothing"> Clothing
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="spending" value="education"> Education
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Saving Options -->
+                    <div class="form-section">
+                        <h3>💎 Saving & Investment Options</h3>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="emergency-fund"> Emergency Fund
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="401k"> 401(k) / Retirement
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="stocks"> Stock Market
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="bonds"> Bonds
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="gold"> Gold/Precious Metals
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="real-estate"> Real Estate
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="crypto"> Cryptocurrency
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="saving" value="high-yield-savings"> High-Yield Savings
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="form-section">
+                        <h3>📝 Additional Notes (Optional)</h3>
+                        <div class="form-group">
+                            <label for="notes">Any specific financial goals or constraints?</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="e.g., Want to save for vacation, paying off student loans, etc."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="generate-btn">
+                        🚀 Generate My Budget Plan
+                    </button>
+                </form>
+            </div>
+
+            <!-- Budget Result -->
+            <div class="budget-card hidden" id="budget-result-card">
+                <h2>🎯 Your Personalized Budget Plan</h2>
+                <div id="budget-result-content"></div>
+                <div class="result-actions">
+                    <button class="btn-secondary" id="create-new-btn">Create New Budget</button>
+                    <button class="btn-secondary" id="view-history-btn">View History</button>
+                </div>
+            </div>
+
+            <!-- Budget History -->
+            <div class="budget-card hidden" id="budget-history-card">
+                <h2>📚 Budget History</h2>
+                <div id="budget-history-content"></div>
+                <div class="result-actions">
+                    <button class="btn-secondary" id="back-to-form-btn">Back to Form</button>
+                </div>
+            </div>
+
+            <!-- Loading indicator -->
+            <div class="loading hidden" id="loading">
+                <div class="spinner"></div>
+                <p>Generating your personalized budget plan...</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
